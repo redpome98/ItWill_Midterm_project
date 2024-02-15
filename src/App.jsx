@@ -47,12 +47,18 @@ function App() {
       <button onClick={BtnWeatherReport}>Report Weather</button>
       {weatherInfo && (
         <div>
-          <h2>
+          <h2 id="date">
             Today is {year}/{month}/{day}
           </h2>
-          <p>Temperature : {(weatherInfo.main.temp - 273.15).toFixed(2)}'C</p>
-          <p>Humidity : {weatherInfo.main.humidity}%</p>
-    
+          <div>
+            <div id="temp">
+              Temperature : {(weatherInfo.main.temp - 273.15).toFixed(2)}'C
+            </div>
+            <div id="detail">
+              <div id="humidity">Humidity : {weatherInfo.main.humidity}%</div>
+              <div id="wind">Wind: {weatherInfo.wind.speed} Km/h </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
